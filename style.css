@@ -1,0 +1,43 @@
+:root { --sidebar-width: 300px; }
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #000; color: #fff; height: 100vh; overflow: hidden; }
+
+header { 
+    padding: 10px 15px; background: #1a1a1a; display: flex; align-items: center; 
+    gap: 15px; border-bottom: 2px solid #007bff; z-index: 1001; position: relative;
+}
+
+.logo-title { font-size: 1.4rem; font-weight: bold; color: #007bff; flex: 1; margin: 0; letter-spacing: 1px; }
+.menu-toggle { background: #333; border: 1px solid #555; color: white; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
+
+#main-container { display: flex; height: calc(100vh - 62px); position: relative; }
+
+#sidebar { 
+    width: var(--sidebar-width); background: #111; overflow-y: auto; 
+    transition: transform 0.3s ease; position: absolute; left: 0; top: 0; bottom: 0; 
+    z-index: 1000; border-right: 1px solid #333; transform: translateX(0); 
+}
+#sidebar.closed { transform: translateX(-100%); }
+
+#player-area { 
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; 
+    padding: 10px; width: 100%; transition: margin-left 0.3s ease;
+    margin-left: var(--sidebar-width); 
+}
+#sidebar.closed + #player-area { margin-left: 0; }
+
+.channel-btn { 
+    display: flex; align-items: center; width: 100%; padding: 12px 15px; 
+    text-align: left; background: none; color: #ccc; border: none; 
+    border-bottom: 1px solid #222; cursor: pointer; transition: 0.2s;
+}
+.channel-btn:hover { background: #222; color: #fff; }
+.channel-btn.active { background: #007bff; color: white; font-weight: bold; }
+
+#video-container { width: 95%; max-width: 1200px; }
+video { width: 100%; aspect-ratio: 16 / 9; background: #000; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+
+.controls { margin-top: 15px; }
+.btn-pip { background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+
+#modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; padding: 20px; box-sizing: border-box; }
+textarea { width: 100%; height: 75%; background: #000; color: #0f0; border: 1px solid #444; font-family: monospace; padding: 10px; }
