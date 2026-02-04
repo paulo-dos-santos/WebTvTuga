@@ -3,7 +3,9 @@
 Uma aplicação Web leve e moderna para assistir a canais de televisão portugueses e internacionais via streaming (HLS), com foco na simplicidade e na experiência de utilização em dispositivos móveis.
 
 
-🚀 **Acede aqui:** [https://paulo-dos-santos.github.io/WebTvTuga/](https://paulo-dos-santos.github.io/WebTvTuga/)
+🚀 **Acede aqui TVs:** [https://paulo-dos-santos.github.io/WebTvTuga/](https://paulo-dos-santos.github.io/WebTvTuga/)
+
+🚀 **Acede aqui Radios:** [https://paulo-dos-santos.github.io/WebTvTuga/radio](https://paulo-dos-santos.github.io/WebTvTuga/radio)
 
 ---
 
