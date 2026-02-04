@@ -4,13 +4,18 @@ const m3uInput = document.getElementById('m3u-input');
 const logoTitle = document.querySelector('.logo-title');
 let hls;
 
+// Chave única para o storage da rádio
+const STORAGE_KEY = 'webTvTuga';
+
+
 function toggleMenu() { sidebar.classList.toggle('closed'); }
 
 window.onload = () => {
-    let salva = localStorage.getItem('webTvTuga_v2');
+    let salva = localStorage.getItem('STORAGE_KEY'); // Nome genérico ou o que usaste
     if (!salva) {
-        salva = listaCompletaDefault; // Vem do lista.js
-        localStorage.setItem('webTvTuga_v2', salva);
+        // Se não houver nada no browser, usa o que está no lista.js
+        salva = typeof listaCompletaDefault !== 'undefined' ? listaCompletaDefault : listaRadiosDefault;
+        localStorage.setItem('STORAGE_KEY', salva);
     }
     m3uInput.value = salva;
     parseM3U(salva);
@@ -55,6 +60,22 @@ function playStream(url, btn, name) {
         hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = url;
+    }
+}
+
+function restaurarDefault() {
+    if (confirm("Isto vai apagar a tua lista personalizada e carregar a lista original do servidor. Desejas continuar?")) {
+        // Remove do browser
+        localStorage.removeItem('STORAGE_KEY');
+        
+        // Vai buscar a constante que está no lista.js
+        const original = typeof listaCompletaDefault !== 'undefined' ? listaCompletaDefault : listaRadiosDefault;
+        
+        m3uInput.value = original;
+        localStorage.setItem('STORAGE_KEY', original);
+        parseM3U(original);
+        alert("Lista original carregada com sucesso!");
+        fecharModal();
     }
 }
 
