@@ -5,14 +5,20 @@ https://streaming-live.rtp.pt/liverepeater/smil:rtp1HD.smil/playlist.m3u8
 https://streaming-live.rtp.pt/liverepeater/rtp2HD.smil/playlist.m3u8
 #EXTINF:-1,SIC
 https://d1zx6l1dn8vaj5.cloudfront.net/out/v1/b89cc37caa6d418eb423cf092a2ef970/index.m3u8
-#EXTINF:-1,TVI
-https://video-auth6.iol.pt/live_tvi/live_tvi/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Mi80LzIwMjYgMTI6MTk6NDUgUE0maGFzaF92YWx1ZT1oVXJ2bFJkV2NrNm9KaW1ud2syejNRPT0mdmFsaWRtaW51dGVzPTE0NDAmaWQ9OTUzZmRmYWEtNWZjMi00ZmY5LTgzZTAtMDgzODI5MzM1N2Fi/
+#EXTINF:-1 group-title="TV" tvg-id="TVI.pt" tvg-logo="https://raw.githubusercontent.com/LITUATUI/M3UPT/main/logos/TVI.png",TVI
+https://video-auth6.iol.pt/live_tvi/live_tvi/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Mi81LzIwMjYgMTI6MjA6NDAgUE0maGFzaF92YWx1ZT1Wc0VDZ0hJYXp2VmI4Zmw4OTlOcVZnPT0mdmFsaWRtaW51dGVzPTE0NDAmaWQ9ZDlmYWNlM2EtMjczYS00NTFkLWFhZWQtYjk2YjM5NmM2ZDli/
 #EXTINF:-1,RTP Notícias
 https://streaming-live.rtp.pt/liverepeater/smil:rtpnHD.smil/playlist.m3u8
 #EXTINF:-1,SIC Notícias
 https://sicnot.live.impresa.pt/sicnot.m3u8
-#EXTINF:-1,CNN Portugal
-https://video-auth7.iol.pt/live_cnn/live_cnn/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Mi80LzIwMjYgMTI6MTk6NDUgUE0maGFzaF92YWx1ZT1zUGp4NzFkTjhiQ29oTStLOG8zaGt3PT0mdmFsaWRtaW51dGVzPTE0NDAmaWQ9NWI2YTg4YjUtODZkYi00NDE2LWI0NjEtMmQyMGEwY2Q3NWVh/
+#EXTINF:-1 group-title="TV" tvg-id="CNNPortugal.pt" tvg-logo="https://raw.githubusercontent.com/LITUATUI/M3UPT/main/logos/CNN-Portugal.png",CNN Portugal
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0
+https://video-auth7.iol.pt/live_cnn/live_cnn/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Mi81LzIwMjYgMTI6MjA6NDEgUE0maGFzaF92YWx1ZT0zR2duaUZnd3AzNURYRlhxdzFHY1RRPT0mdmFsaWRtaW51dGVzPTE0NDAmaWQ9OWY3NzE3ZGYtNDQ3Ny00NmQ2LTk4MGEtZjJkOTU2ZDBlYmUx/
+#EXTINF:-1 group-title="TV" tvg-id="CNNPortugal.pt" tvg-logo="https://raw.githubusercontent.com/LITUATUI/M3UPT/main/logos/CNN-Portugal.png",CNN Portugal
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0
+#https://github.com/LITUATUI/M3UPT/raw/refs/heads/main/M3U/CNN_Portugal.m3u
+#EXTINF:-1 group-title="TV" tvg-id="CNNBrasil.br" tvg-logo="https://raw.githubusercontent.com/LITUATUI/M3UPT/main/logos/CNN-Brasil.png",CNN Brasil
+https://d25usgadhphvwi.cloudfront.net/hls/main.m3u8
 #EXTINF:-1,Euronews PT
 https://38cf202f635c4e6d9a9ecd1dc805222a.mediatailor.eu-west-1.amazonaws.com/v1/manifest/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6572/aa7d84c5-ed1b-4706-aa89-11c525faf07d/5.m3u8
 #EXTINF:-1,ARTV
@@ -27,9 +33,11 @@ https://streaming-live.rtp.pt/liverepeater/rtpmadeira.smil/playlist.m3u8
 https://streaming-live.rtp.pt/liverepeater/rtpafrica.smil/playlist.m3u8
 #EXTINF:-1,RTP Internacional
 https://streaming-live.rtp.pt/liverepeater/rtpi.smil/playlist.m3u8
-#EXTINF:-1,TVI Internacional
-https://video-auth6.iol.pt/live_tvi_internacional/live_tvi_internacional/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Mi80LzIwMjYgMTI6MTk6NDYgUE0maGFzaF92YWx1ZT1WcDdlUnZzbWVDMlp5ZHpRcmYxeVFnPT0mdmFsaWRtaW51dGVzPTE0NDAmaWQ9ODNhYzRlZjItMjVlOS00OWZlLTgwMDEtNTljYTQ2YWQxNzEz/
-#EXTINF:-1,TVI África
+#EXTINF:-1 group-title="TV" tvg-id="TVIInternacional.pt" tvg-logo="https://github.com/LITUATUI/M3UPT/raw/main/logos/TVI-Internacional.png",TVI Internacional
+https://video-auth6.iol.pt/live_tvi_internacional/live_tvi_internacional/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Mi81LzIwMjYgMTI6MjA6NDEgUE0maGFzaF92YWx1ZT03VmplMFdWVTBaMzB4U0lFVDhKTSt3PT0mdmFsaWRtaW51dGVzPTE0NDAmaWQ9OTJlNjI4MmYtY2NlMC00YWI3LWI4ZDgtYTFmYjZmMWE4OTc3/
+#EXTINF:-1 group-title="TV" tvg-id="TVIInternacional.pt" tvg-logo="https://github.com/LITUATUI/M3UPT/raw/main/logos/TVI-Internacional.png",TVI Internacional
+#https://github.com/LITUATUI/M3UPT/raw/refs/heads/main/M3U/TVI_Internacional.m3u
+#EXTINF:-1 group-title="TV" tvg-id="TVIAfrica.pt" tvg-logo="https://raw.githubusercontent.com/LITUATUI/M3UPT/main/logos/TVI_África.png",TVI África
 https://video-auth4.iol.pt/live_tvi_africa/live_tvi_africa/edge_servers/tviafrica-480p/playlist.m3u8
 #EXTINF:-1,V+ TVI
 https://video-auth2.iol.pt/live_vmais/live_vmais/edge_servers/vmais-720p/playlist.m3u8
