@@ -73,22 +73,54 @@ function playRadio(url, btn, name) {
     logoTitle.innerText = `WebRadioTuga - ${name}`;
     radioStatus.innerText = `A ouvir: ${name}`;
 
-    // Parar reprodução atual antes de trocar
+    // Parar e limpar tudo antes de carregar a nova
     audio.pause();
-    audio.src = "";
+    if (hls) {
+        hls.destroy();
+        hls = null;
+    }
+    audio.removeAttribute('src');
+    audio.load();
 
-    if (Hls.isSupported() && url.includes(".m3u8")) {
-        if (hls) hls.destroy();
-        hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(audio);
-        hls.on(Hls.Events.MANIFEST_PARSED, () => audio.play());
+    // Se for um link .m3u8, usamos o HLS mas com configuração de áudio
+    if (url.includes(".m3u8")) {
+        if (Hls.isSupported()) {
+            hls = new Hls({
+                liveDurationInfinity: true,
+                manifestLoadingMaxRetry: 10,
+                levelLoadingMaxRetry: 10
+            });
+            hls.loadSource(url);
+            hls.attachMedia(audio);
+            hls.on(Hls.Events.MANIFEST_PARSED, () => audio.play());
+            
+            // Tratamento de erros para não parar aos 15s
+            hls.on(Hls.Events.ERROR, function (event, data) {
+                if (data.fatal) {
+                    switch (data.type) {
+                        case Hls.ErrorTypes.NETWORK_ERROR:
+                            hls.startLoad();
+                            break;
+                        case Hls.ErrorTypes.MEDIA_ERROR:
+                            hls.recoverMediaError();
+                            break;
+                        default:
+                            hls.destroy();
+                            break;
+                    }
+                }
+            });
+        } else if (audio.canPlayType('application/vnd.apple.mpegurl')) {
+            audio.src = url;
+            audio.play();
+        }
     } else {
-        if (hls) hls.destroy();
+        // Para links diretos (MP3/AAC) - Muito mais estável para rádio
         audio.src = url;
-        audio.play().catch(e => console.warn("Erro ao reproduzir stream direto:", e));
+        audio.play().catch(e => console.warn("Erro no play:", e));
     }
 }
+
 
 function abrirModal() { document.getElementById('modal').style.display = 'block'; }
 function fecharModal() { document.getElementById('modal').style.display = 'none'; }
